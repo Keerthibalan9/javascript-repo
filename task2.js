@@ -99,3 +99,49 @@ for (let i = 1; i <= 100; i++) {
     console.log("FizzBuzz") 
   }
 }
+
+
+
+function gcd(a,b)
+{
+    let c=a%b
+    if (a>0 || b>0){
+        alert("Enter positive numbers")
+    }
+    else if(b==0){
+        console.log(a)
+    }
+    else if(a==0){
+        console.log(b)
+    }
+    else if(c==0){
+        console.log(c)
+    }
+    else if(c!=0){
+        if(a%c==0){
+            console.log(c)
+        }
+        else if(b%c==0){
+            console.log(c)
+        }
+        
+    }
+    
+}
+gcd (42, 18)
+
+// -----------------------------------
+
+let x = function myFunction(a, b) {
+  console.log( a * b)
+}
+x(2,2)
+
+// -----------------------------------
+
+let y = function multiply(num) {
+    return num*num
+  }
+  y(10)
+
+  // -----------------------------------
