@@ -137,7 +137,7 @@ let x = function myFunction(a, b) {
 }
 x(2,2)
 
-// -----------------------------------
+// -------------------------------------
 
 let y = function multiply(num) {
     return num*num
