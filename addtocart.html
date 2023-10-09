@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add2cart</title>
+    <style>
+        #addButton {
+            background-color: rgb(21, 142, 255);
+            color: white;
+            border: none;
+            padding: 10px 8px;
+        }
+        #textList{
+            list-style: none;
+        }
+        #textInput{
+            height: 30px;
+            width: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Add to cart</h1>
+    <input type="text" id="textInput">
+    <button id="addButton">Add to cart</button>
+    <ul id="textList"></ul>
+
+    <script>
+        let textInput = document.getElementById("textInput")
+        let addButton = document.getElementById("addButton")
+        let textList = document.getElementById("textList")
+        addButton.addEventListener("click", function () {
+            let newText = textInput.value.trim();
+            let listItem = document.createElement("li");
+            listItem.textContent = newText;
+            textList.appendChild(listItem);
+            textInput.value = "";
+        })
+    </script>
+
+</body>
+
+</html>
+
+
+
+
