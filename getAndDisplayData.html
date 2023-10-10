@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="textInput" placeholder="Enter a message">
+    <button id="clickButton">Show Message</button>
+    <script>
+        let textInput = document.getElementById("textInput");
+        let clickButton = document.getElementById("clickButton");
+        clickButton.addEventListener("click", function () {
+            const inputText = textInput.textContent;
+            alert("User input: " + inputText);
+        });
+
+    </script>
+</body>
+
+</html>
