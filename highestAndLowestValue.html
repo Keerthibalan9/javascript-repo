@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         function high(arra){
+            if (arra.length===0){
+                console.log("No value given")
+            }
+            let great=arra[0];
+            for (i=1; i<arra.length ;i++) {
+                if (great < arra[i]){
+                    great=arra[i];
+                }
+            }
+            return great
+        }
+        let inp=[44,33,882,11];
+        high(inp)
+
+        function low(arra){
+            if (arra.length===0){
+                console.log("No value given")
+            }
+            let lowest=arra[0];
+            for (i=1; i<arra.length ;i++) {
+                if (lowest > arra[i]){
+                    lowest=arra[i];
+                }
+            }
+            return lowest
+        }
+        let inpu=[44,33,882,11];
+        low(inpu)
+    </script>
+</body>
+</html>
