@@ -1,23 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
+    <input type="text" placeholder="Enter 1st value" id="first1">
+    <input type="text" placeholder="Enter 2nd value" id="first2">
+    <button id="btn">Calculate</button>
+    <h1 id="add">Result will be displayed here</h1>
+    <h1 id="Subtraction"></h1>
+    <h1 id="Multiplication"></h1>
+    <h1 id="Division"></h1>
+    <h1 id="Modulus"></h1>
     <script>
-        let a=document.createElement("div");
-let b=document.createTextNode("Login Page");
-let c=document.createElement("input");
-c.setAttribute('type','text');
-let d=document.createElement("button");
-let e=document.createTextNode("Click");
-d.appendChild(e);
-a.appendChild(c);
-a.appendChild(b);
-a.appendChild(d);
-document.body.appendChild(a);
+
+        let text1 = document.getElementById("first1")
+        let text2 = document.getElementById("first2")
+        let show = document.getElementById("btn")
+        let add = document.getElementById("add")
+        let Subtraction = document.getElementById("Subtraction")
+        let Multiplication = document.getElementById("Multiplication")
+        let Division = document.getElementById("Division")
+        let Modulus = document.getElementById("Modulus")
+        show.addEventListener("click", function () {
+          let a=parseFloat(text1.value);
+          let b=parseFloat(text2.value);
+            add.innerHTML = `Addition: ${a + b}`;
+            Subtraction.innerHTML = `Subtraction: ${a - b}`;
+            Multiplication.innerHTML = `Multiplication: ${a * b}`;
+            Division.innerHTML = `Division: ${a / b}`;
+            Modulus.innerHTML = `Modulus: ${a % b}`;
+        });
+
     </script>
 </body>
+
 </html>
