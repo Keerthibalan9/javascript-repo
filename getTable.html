@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            border: 1px;
+            border-color: black;
+            border-collapse: collapse;
+            border-style: solid;
+        }
+
+        th,
+        td {
+            border: 1px;
+            border-color: black;
+            border-collapse: collapse;
+            border-style: solid;
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h4>Enter details</h4>
+        <label for="">Roll. No.</label>
+        <input type="number" id="input1">
+        <label for="">Name</label>
+        <input type="text" id="input2">
+        <label for="">Mark 1</label>
+        <input type="number" id="input3">
+        <label for="">Mark 2</label>
+        <input type="number" id="input4">
+        <label for="">Mark 3</label>
+        <input type="number" id="input5">
+        <button onclick="Add()">Add</button>
+    </div>
+
+    <div>
+        <h4>Record</h4>
+        <table>
+            <tr>
+                <th>Roll. No.</th>
+                <th>Name</th>
+                <th>Mark 1</th>
+                <th>Mark 2</th>
+                <th>Mark 3</th>
+            </tr>
+            <tr id="pl1"></tr>
+        </table>
+    </div>
+
+    <script>
+
+
+        function Add() {
+            let roll = document.getElementById("input1").value;
+            let rollno = parseInt(roll);
+            let name = document.getElementById("input2").value;
+            let mark2 = document.getElementById("input3").value;
+            let mark22 = parseInt(mark2);
+            let mark3 = document.getElementById("input4").value;
+            let mark33 = parseInt(mark3);
+            let mark4 = document.getElementById("input5").value;
+            let mark44 = parseInt(mark4);
+            document.getElementById("pl1").innerHTML = "<td>" + rollno + "</td>"
+            document.getElementById("pl1").innerHTML += "<td>" + name + "</td>"
+            document.getElementById("pl1").innerHTML += "<td>" + mark22 + "</td>"
+            document.getElementById("pl1").innerHTML += "<td>" + mark33 + "</td>"
+            document.getElementById("pl1").innerHTML += "<td>" + mark44 + "</td>"
+        }
+
+    </script>
+</body>
+
+</html>
