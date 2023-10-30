@@ -42,7 +42,7 @@
 
     <div>
         <h4>Record</h4>
-        <table>
+        <table id="tb1">
             <tr>
                 <th>Roll. No.</th>
                 <th>Name</th>
@@ -51,27 +51,40 @@
                 <th>Mark 3</th>
             </tr>
             <tr id="pl1"></tr>
+
         </table>
     </div>
 
     <script>
 
-
         function Add() {
-            let roll = document.getElementById("input1").value;
-            let rollno = parseInt(roll);
-            let name = document.getElementById("input2").value;
-            let mark2 = document.getElementById("input3").value;
-            let mark22 = parseInt(mark2);
-            let mark3 = document.getElementById("input4").value;
-            let mark33 = parseInt(mark3);
-            let mark4 = document.getElementById("input5").value;
-            let mark44 = parseInt(mark4);
-            document.getElementById("pl1").innerHTML = "<td>" + rollno + "</td>"
-            document.getElementById("pl1").innerHTML += "<td>" + name + "</td>"
-            document.getElementById("pl1").innerHTML += "<td>" + mark22 + "</td>"
-            document.getElementById("pl1").innerHTML += "<td>" + mark33 + "</td>"
-            document.getElementById("pl1").innerHTML += "<td>" + mark44 + "</td>"
+            if (!input1.value || !input2.value || !input3.value || !input4.value || !input5.value) {
+                alert("Fill all field")
+            }
+            else {
+                let roll = document.getElementById("input1").value;
+                let rollno = parseInt(roll);
+                let name = document.getElementById("input2").value;
+                let mark2 = document.getElementById("input3").value;
+                let mark22 = parseInt(mark2);
+                let mark3 = document.getElementById("input4").value;
+                let mark33 = parseInt(mark3);
+                let mark4 = document.getElementById("input5").value;
+                let mark44 = parseInt(mark4);
+                let newRow = document.createElement("tr");
+                newRow.innerHTML = `
+      <td>${rollno}</td>
+      <td>${name}</td>
+      <td>${mark22}</td>
+      <td>${mark33}</td>
+      <td>${mark44}</td>    `;
+                tb1.appendChild(newRow);
+                input1.value = " "
+                input2.value = " "
+                input3.value = " "
+                input4.value = " "
+                input5.value = " "
+                           }
         }
 
     </script>
