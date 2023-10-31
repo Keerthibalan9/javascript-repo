@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="date" id="ipDate">
+    <button onclick="findDate()">Get dates</button>
+    <br> <br>
+    <label for="">Selected date</label>
+    <h3 id="output3"></h3>
+
+    <label for="">After 5 days</label>
+    <h3 id="output1"></h3>
+    <label for="">Before 5 days</label>
+    <h3 id="output2"></h3>
+    <script>
+        function findDate() {
+            const options = { day: '2-digit', month: 'long', year: 'numeric' };
+            let ipDate = document.getElementById("ipDate")
+            const userDate = new Date(ipDate.value);
+            let a = userDate.toLocaleDateString(undefined, options);
+
+
+            const plusFiveDays = new Date(userDate);
+            plusFiveDays.setDate(userDate.getDate() + 5);
+            let b = plusFiveDays.toLocaleDateString(undefined, options);
+
+            const minusFiveDays = new Date(userDate);
+            minusFiveDays.setDate(userDate.getDate() - 5);
+            let c = minusFiveDays.toLocaleDateString(undefined, options);
+
+            document.getElementById("output1").innerHTML = a
+            document.getElementById("output2").innerHTML = b
+            document.getElementById("output3").innerHTML = c
+
+
+        }
+    </script>
+</body>
+
+</html>
