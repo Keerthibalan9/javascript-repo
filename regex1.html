@@ -1,40 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
-    input{
+    input {
       height: 26px;
       border: solid black 2px;
       border-radius: 8px;
     }
+    p{
+      font-size: 14px;
+    }
   </style>
 </head>
+
 <body>
 
   <label for="username">Username:</label>
-  
   <input type="text" id="username" oninput="validateUsername()">
   <div id="validationResult"></div>
   <p> (Only accepts: letters, numbers, underscores, and hyphens between 4 and 20 characters)</p>
+  <label for="username">Password:</label>
+  <input type="text" id="pwd" oninput="validatePwd()">
+  <div id="validationResultpwd"></div>
+  <p> (Requires at least one uppercase, lowercase, one digit and one special character)</p>
   <script>
-  function validateUsername() {
-  const usernameInput = document.getElementById("username");
-  const username = usernameInput.value;
-  const pattern = /^[a-zA-Z0-9_-]{4,20}$/;
+    function validateUsername() {
+      const usernameInput = document.getElementById("username");
+      const username = usernameInput.value;
+      const pattern = /^[a-zA-Z0-9_-]{4,20}$/;
 
-  if (pattern.test(username)) {
-    validationResult.textContent = "Username is valid.";
-    validationResult.style.color = "green";
-  } else {
-    validationResult.textContent = "Username is invalid.";
-    validationResult.style.color = "red";
-  }
-}
+      if (pattern.test(username)) {
+        validationResult.textContent = "Username is valid.";
+        validationResult.style.color = "green";
+      } else {
+        validationResult.textContent = "Username is invalid.";
+        validationResult.style.color = "red";
+      }
+    }
+    function validatePwd(){
+      const pwdInput = document.getElementById("pwd");
+      const pwds = pwdInput.value;
+      const pattern = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@#$%^&!])[A-Za-z\d@#$%^&!]{8,}$/;
 
- </script>
+      if (pattern.test(pwds)) {
+        validationResultpwd.textContent = "Password is strong";
+        validationResultpwd.style.color = "green";
+      } else {
+        validationResultpwd.textContent = "Password is weak";
+        validationResultpwd.style.color = "red";
+      }
+    }
+
+  </script>
 </body>
-</html>
 
+</html>
