@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    input{
+      height: 26px;
+      border: solid black 2px;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <label for="username">Username:</label>
+  
+  <input type="text" id="username" oninput="validateUsername()">
+  <div id="validationResult"></div>
+  <p> (Only accepts: letters, numbers, underscores, and hyphens between 4 and 20 characters)</p>
+  <script>
+  function validateUsername() {
+  const usernameInput = document.getElementById("username");
+  const username = usernameInput.value;
+  const pattern = /^[a-zA-Z0-9_-]{4,20}$/;
+
+  if (pattern.test(username)) {
+    validationResult.textContent = "Username is valid.";
+    validationResult.style.color = "green";
+  } else {
+    validationResult.textContent = "Username is invalid.";
+    validationResult.style.color = "red";
+  }
+}
+
+ </script>
+</body>
+</html>
+
